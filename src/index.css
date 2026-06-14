@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Great+Vibes&family=Pinyon+Script&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-cursive: "Burgues Script", "Bickham Script Pro", "Pinyon Script", "Great Vibes", cursive;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-arabic: "Amiri", serif;
+  
+  --color-wedding-blush: #FDE8EF;
+  --color-wedding-blush-light: #FBE9F0;
+  --color-wedding-rose: #D4899A;
+  --color-wedding-crimson: #8B1A3A;
+  --color-wedding-gold: #C9A227;
+  --color-wedding-text: #6B1530;
+}
+
+@layer base {
+  body {
+    @apply font-serif text-wedding-text bg-wedding-blush overflow-x-hidden antialiased;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Photorealistic Textures */
+.paper-texture {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  background-blend-mode: multiply;
+}
+
+/* 3D Envelope Shadows & Depth */
+.envelope-shadow-outer {
+  box-shadow: 
+    0 20px 40px -10px rgba(107, 21, 48, 0.15),
+    0 30px 60px -15px rgba(0, 0, 0, 0.2),
+    inset 0 -2px 10px rgba(0,0,0,0.05);
+}
+
+.envelope-shadow-inner {
+  box-shadow: inset 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.flap-shadow {
+  filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.15));
+}
+
+.wax-seal-shadow {
+  box-shadow: 
+    0 8px 15px rgba(0, 0, 0, 0.3),
+    inset 0 4px 6px rgba(255, 255, 255, 0.4),
+    inset 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Glow Effect */
+.glow-effect {
+  box-shadow: 0 0 30px 10px rgba(201, 162, 39, 0.5);
+}
+
+/* Organic Edge Wax Seal (using clip-path in inline styles for precise control, but generic here) */
+.organic-edge {
+  clip-path: polygon(
+    50% 0%, 61% 3%, 73% 2%, 82% 8%, 91% 16%, 95% 26%, 98% 38%, 97% 50%, 
+    99% 61%, 94% 72%, 91% 83%, 81% 91%, 70% 95%, 59% 98%, 50% 100%, 
+    39% 97%, 28% 95%, 18% 91%, 10% 82%, 4% 71%, 1% 60%, 3% 49%, 
+    1% 37%, 4% 27%, 9% 17%, 18% 10%, 28% 5%, 39% 2%
+  );
+}
+
+/* Custom Utilities / Animations for floating flowers */
+@keyframes floral-float {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  25%  { transform: translateY(-8px) rotate(2deg); }
+  50%  { transform: translateY(-15px) rotate(-2deg); }
+  75%  { transform: translateY(-6px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes floral-drift {
+  0%   { transform: translateX(0px); }
+  33%  { transform: translateX(10px); }
+  66%  { transform: translateX(-6px); }
+  100% { transform: translateX(0px); }
+}
+
+@keyframes slow-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-floral-float {
+  animation: floral-float var(--float-duration, 6s) ease-in-out var(--float-delay, 0s) infinite;
+}
+
+.animate-floral-drift {
+  animation: floral-drift var(--drift-duration, 8s) ease-in-out var(--drift-delay, 0s) infinite;
+}
+
+/* Sparkle slow spin for gold sparkles */
+.animate-slow-spin {
+  animation: slow-spin 12s linear infinite;
+}
+
+/* Scatter transition when envelope opens */
+.decor-scatter {
+  transform: translate(var(--scatter-x), var(--scatter-y)) scale(1.2) !important;
+  opacity: 0 !important;
+  transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+/* 3D Envelope utilities */
+.perspective-1000 {
+  perspective: 1200px; /* Increased for more dramatic realistic perspective */
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-x-180 {
+  transform: rotateX(180deg);
+}
+
+.origin-top {
+  transform-origin: top;
+}
+
+/* ScratchReveal section ambient float */
+@keyframes floatSec {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  25%  { transform: translateY(-10px) rotate(3deg); }
+  50%  { transform: translateY(-18px) rotate(-2deg); }
+  75%  { transform: translateY(-7px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes driftSec {
+  0%   { transform: translateX(0px); }
+  33%  { transform: translateX(12px); }
+  66%  { transform: translateX(-8px); }
+  100% { transform: translateX(0px); }
+}
