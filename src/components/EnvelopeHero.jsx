@@ -44,11 +44,16 @@ const EnvelopeHero = ({ onRevealComplete }) => {
   const [clicked, setClicked] = useState(false);
   const controls = useAnimation();
 
+  // Kick off the entrance fade-in as soon as the component mounts
+  React.useEffect(() => {
+    controls.start({ opacity: 1, transition: { duration: 0.6, ease: "easeOut" } });
+  }, [controls]);
+
   const handleClick = async () => {
     if (clicked) return;
     setClicked(true);
 
-    // Fade out and scale up the entire landing page together for a seamless transition
+    // Fade out and scale up the entire landing page for a seamless transition
     await controls.start({
       scale: 1.1,
       opacity: 0,
@@ -62,9 +67,8 @@ const EnvelopeHero = ({ onRevealComplete }) => {
     <motion.div
       className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden z-50 bg-[#FDF6F7] py-16 px-4"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
       animate={controls}
+      exit={{ opacity: 0 }}
     >
       {/* Centered Envelope Image */}
       <motion.img
