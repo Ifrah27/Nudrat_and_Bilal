@@ -74,7 +74,7 @@ const EnvelopeHero = ({ onRevealComplete }) => {
       <motion.img
         src="/envelope-hero.png"
         alt="Wedding Invitation Envelope"
-        className="w-[280px] h-[190px] xs:w-[320px] xs:h-[220px] md:w-[480px] md:h-[330px] object-contain cursor-pointer select-none"
+        className="w-[78vw] max-w-[440px] h-auto object-contain cursor-pointer select-none drop-shadow-xl"
         onClick={handleClick}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
