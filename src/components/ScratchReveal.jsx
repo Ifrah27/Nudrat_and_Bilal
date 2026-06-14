@@ -60,29 +60,29 @@ const GoldSparkle = ({ color = '#D4AF37' }) => (
    AMBIENT FLOATING DECORATIONS  (background layer around the section)
 ───────────────────────────────────────────────────────────────────────────── */
 const AMBIENT = [
-  { type: 'blossom', color: '#FF88AA', top: 5,  left: 4,  size: 28, rot: 15,  fd: 5.2, dd: 7.1, fd2: 0.3, dd2: 1.1 },
+  { type: 'blossom', color: '#FF88AA', top: 5, left: 4, size: 28, rot: 15, fd: 5.2, dd: 7.1, fd2: 0.3, dd2: 1.1 },
   { type: 'blossom', color: '#FFB3C6', top: 12, left: 88, size: 24, rot: 200, fd: 6.1, dd: 8.3, fd2: 1.2, dd2: 2.4 },
-  { type: 'blossom', color: '#FF7AA8', top: 75, left: 6,  size: 26, rot: 80,  fd: 4.8, dd: 6.5, fd2: 2.1, dd2: 0.8 },
+  { type: 'blossom', color: '#FF7AA8', top: 75, left: 6, size: 26, rot: 80, fd: 4.8, dd: 6.5, fd2: 2.1, dd2: 0.8 },
   { type: 'blossom', color: '#FFC8D8', top: 82, left: 91, size: 30, rot: 300, fd: 5.7, dd: 7.8, fd2: 0.8, dd2: 3.2 },
-  { type: 'blossom', color: '#FF88AA', top: 45, left: 2,  size: 22, rot: 130, fd: 6.4, dd: 9.1, fd2: 3.5, dd2: 1.7 },
+  { type: 'blossom', color: '#FF88AA', top: 45, left: 2, size: 22, rot: 130, fd: 6.4, dd: 9.1, fd2: 3.5, dd2: 1.7 },
   { type: 'blossom', color: '#FFB3C6', top: 55, left: 95, size: 25, rot: 260, fd: 5.0, dd: 7.3, fd2: 1.8, dd2: 4.2 },
-  { type: 'leaf',    color: '#7DC87A', top: 20, left: 7,  size: 22, rot: -30, fd: 7.2, dd: 9.5, fd2: 0.5, dd2: 2.9 },
-  { type: 'leaf',    color: '#8BBF72', top: 65, left: 92, size: 20, rot: 45,  fd: 6.8, dd: 8.7, fd2: 2.7, dd2: 1.3 },
-  { type: 'leaf',    color: '#96C875', top: 90, left: 40, size: 18, rot: 120, fd: 5.5, dd: 7.9, fd2: 1.1, dd2: 3.8 },
-  { type: 'bud',    color: '#FFA0B8', top: 30, left: 93, size: 20, rot: 200, fd: 5.8, dd: 8.1, fd2: 0.9, dd2: 2.1 },
-  { type: 'bud',    color: '#F9C0CC', top: 70, left: 3,  size: 18, rot: 60,  fd: 6.3, dd: 7.6, fd2: 3.2, dd2: 0.5 },
+  { type: 'leaf', color: '#7DC87A', top: 20, left: 7, size: 22, rot: -30, fd: 7.2, dd: 9.5, fd2: 0.5, dd2: 2.9 },
+  { type: 'leaf', color: '#8BBF72', top: 65, left: 92, size: 20, rot: 45, fd: 6.8, dd: 8.7, fd2: 2.7, dd2: 1.3 },
+  { type: 'leaf', color: '#96C875', top: 90, left: 40, size: 18, rot: 120, fd: 5.5, dd: 7.9, fd2: 1.1, dd2: 3.8 },
+  { type: 'bud', color: '#FFA0B8', top: 30, left: 93, size: 20, rot: 200, fd: 5.8, dd: 8.1, fd2: 0.9, dd2: 2.1 },
+  { type: 'bud', color: '#F9C0CC', top: 70, left: 3, size: 18, rot: 60, fd: 6.3, dd: 7.6, fd2: 3.2, dd2: 0.5 },
   { type: 'butterfly', color: '#89B4FA', top: 15, left: 50, size: 32, rot: 0, fd: 7.5, dd: 10.2, fd2: 1.6, dd2: 3.5 },
-  { type: 'sparkle', color: '#D4AF37', top: 8,  left: 70, size: 14, rot: 45, fd: 3.9, dd: 5.5, fd2: 0.4, dd2: 1.2 },
+  { type: 'sparkle', color: '#D4AF37', top: 8, left: 70, size: 14, rot: 45, fd: 3.9, dd: 5.5, fd2: 0.4, dd2: 1.2 },
   { type: 'sparkle', color: '#C9A227', top: 92, left: 25, size: 12, rot: 20, fd: 4.2, dd: 6.1, fd2: 2.3, dd2: 0.7 },
   { type: 'sparkle', color: '#E2C060', top: 50, left: 97, size: 13, rot: 75, fd: 3.6, dd: 5.8, fd2: 1.5, dd2: 2.8 },
 ];
 
 const renderAmbientSvg = (type, color) => {
-  if (type === 'blossom')   return <CherryBlossom color={color} />;
-  if (type === 'leaf')      return <LeafSprig color={color} />;
-  if (type === 'bud')       return <FloralBud color={color} />;
+  if (type === 'blossom') return <CherryBlossom color={color} />;
+  if (type === 'leaf') return <LeafSprig color={color} />;
+  if (type === 'bud') return <FloralBud color={color} />;
   if (type === 'butterfly') return <Butterfly color={color} />;
-  if (type === 'sparkle')   return <GoldSparkle color={color} />;
+  if (type === 'sparkle') return <GoldSparkle color={color} />;
   return null;
 };
 
@@ -136,8 +136,8 @@ const getTimeLeft = () => {
   const dist = TARGET - Date.now();
   if (dist <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
   return {
-    days:    Math.floor(dist / 86400000),
-    hours:   Math.floor((dist % 86400000) / 3600000),
+    days: Math.floor(dist / 86400000),
+    hours: Math.floor((dist % 86400000) / 3600000),
     minutes: Math.floor((dist % 3600000) / 60000),
     seconds: Math.floor((dist % 60000) / 1000),
   };
@@ -177,15 +177,15 @@ const CountdownBlock = ({ value, label, revealed }) => {
    MAIN COMPONENT
 ───────────────────────────────────────────────────────────────────────────── */
 const ScratchReveal = () => {
-  const canvasRef    = useRef(null);
-  const sectionRef   = useRef(null);
-  const [revealed,   setRevealed]   = useState(false);
+  const canvasRef = useRef(null);
+  const sectionRef = useRef(null);
+  const [revealed, setRevealed] = useState(false);
   const [showParticles, setShowParticles] = useState(false);
-  const [glowing,    setGlowing]    = useState(false);
-  const [timeLeft,   setTimeLeft]   = useState(getTimeLeft);
-  const isDrawing    = useRef(false);
-  const hasRevealed  = useRef(false);
-  const particles    = useMemo(() => generateParticles(65), []);
+  const [glowing, setGlowing] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(getTimeLeft);
+  const isDrawing = useRef(false);
+  const hasRevealed = useRef(false);
+  const particles = useMemo(() => generateParticles(65), []);
 
   /* Countdown tick */
   useEffect(() => {
@@ -202,18 +202,18 @@ const ScratchReveal = () => {
 
     // Fill scratch layer with blush gradient
     const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    grad.addColorStop(0,   '#F6D1DD');
+    grad.addColorStop(0, '#F6D1DD');
     grad.addColorStop(0.5, '#EFA6C2');
-    grad.addColorStop(1,   '#D97BA7');
+    grad.addColorStop(1, '#D97BA7');
     ctx.fillStyle = grad;
     ctx.roundRect(0, 0, canvas.width, canvas.height, 24);
     ctx.fill();
 
     // Center label
     ctx.font = "28px 'Cormorant Garamond', Georgia, serif";
-    ctx.textAlign    = 'center';
+    ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillStyle    = 'rgba(255,255,255,0.88)';
+    ctx.fillStyle = 'rgba(255,255,255,0.88)';
     ctx.fillText('✦  SCRATCH TO REVEAL  ✦', canvas.width / 2, canvas.height / 2);
 
     // Subtle sparkle hints
@@ -240,7 +240,7 @@ const ScratchReveal = () => {
     for (let i = 3; i < data.length; i += 4) {
       if (data[i] < 20) transparent++;
     }
-    if (transparent / total > 0.45) {
+    if (transparent / total > 0.20) {
       hasRevealed.current = true;
       triggerReveal();
     }
@@ -257,17 +257,17 @@ const ScratchReveal = () => {
   /* Scratch drawing helpers */
   const getPos = (e, canvas) => {
     const rect = canvas.getBoundingClientRect();
-    const scaleX = canvas.width  / rect.width;
+    const scaleX = canvas.width / rect.width;
     const scaleY = canvas.height / rect.height;
     if (e.touches) {
       return {
         x: (e.touches[0].clientX - rect.left) * scaleX,
-        y: (e.touches[0].clientY - rect.top)  * scaleY,
+        y: (e.touches[0].clientY - rect.top) * scaleY,
       };
     }
     return {
       x: (e.clientX - rect.left) * scaleX,
-      y: (e.clientY - rect.top)  * scaleY,
+      y: (e.clientY - rect.top) * scaleY,
     };
   };
 
@@ -308,9 +308,9 @@ const ScratchReveal = () => {
             key={i}
             style={{
               position: 'absolute',
-              top:  `${el.top}%`,
+              top: `${el.top}%`,
               left: `${el.left}%`,
-              width:  el.size,
+              width: el.size,
               height: el.size,
               opacity: 0.55,
               transform: `rotate(${el.rot}deg)`,
@@ -433,8 +433,8 @@ const ScratchReveal = () => {
           {/* Subtle corner ornaments */}
           {['top-3 left-3 border-t border-l', 'top-3 right-3 border-t border-r',
             'bottom-3 left-3 border-b border-l', 'bottom-3 right-3 border-b border-r'].map((cls, i) => (
-            <div key={i} className={`absolute ${cls} w-6 h-6 border-[#D4AF37] opacity-50`} />
-          ))}
+              <div key={i} className={`absolute ${cls} w-6 h-6 border-[#D4AF37] opacity-50`} />
+            ))}
 
           <p
             className="font-serif uppercase tracking-widest"
@@ -545,8 +545,8 @@ const ScratchReveal = () => {
               style={{ gap: 16 }}
             >
               {[
-                { label: 'DAYS',    value: timeLeft.days },
-                { label: 'HOURS',   value: timeLeft.hours },
+                { label: 'DAYS', value: timeLeft.days },
+                { label: 'HOURS', value: timeLeft.hours },
                 { label: 'MINUTES', value: timeLeft.minutes },
                 { label: 'SECONDS', value: timeLeft.seconds },
               ].map((b, i) => (
